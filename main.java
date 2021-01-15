@@ -29,12 +29,25 @@ public class main {
 					System.out.println("---- Criando comanda ----");
 					c = new adm();
 					m = new mesas();
+					boolean x=true;
+					
 					System.out.print("\nDigite o numero da comanda: ");
 					c.setComanda(ent.next());
 					System.out.print("\nDigite o preço: R$");
 					c.setValor(ent.nextDouble());
-					System.out.print("\nDigite a mesa desejada: ");
-					m.setMesa(ent.nextInt());
+					
+					while(x) { //REVER ESSA PARTE
+						System.out.print("\nMesas disponiveis: ");
+						m.listaMesas();
+						System.out.print("\nDigite a mesa desejada: ");
+						int mesa = ent.nextInt();
+						if(m.ehVazioM(mesa)) {
+							c.setMesas(mesa);
+							break;
+						} else {
+							System.out.println("Mesa indisponivel.");
+						}
+					}
 					rest.inserirIni(c);
 					break;
 					

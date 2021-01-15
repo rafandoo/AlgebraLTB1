@@ -17,4 +17,13 @@ public class adm {
 	public double getValor() {
 		return valor;
 	}
+	
+	public void setMesas(int mesas) {
+		this.mesas = mesas;
+		mesas m = new mesas();
+		m.ocupaMesa(mesas);
+	}
+	public int getMesas() {
+		return mesas;
+	}
 }

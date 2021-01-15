@@ -1,28 +1,35 @@
 public class mesas {
-	private int[] mesa = new int[99999];
+	private int[] mesa = new int[10];
 	
+	//CONSTRUTOR
 	public mesas() {
 		for(int i=0;i<mesa.length;i++) {
-			mesa[i] = i+1;
+			mesa[i] = 0;
 		}
 	}
-	/*public void setMesa(int[] mesa) {
-		this.mesa = mesa;
-	}
-	public int[] getMesa() {
-		return mesa;
-	}*/
 	
-	public void setMesa(int num) {
-		this.mesa[num]= 1;
-	}
-	public int getMesa(int num) {
-		return mesa[num];
+	//METODO PARA TESTAR SE A MESA ESTA VAZIA
+	public boolean ehVazioM(int mesa) {
+		return(this.mesa[mesa] == 0);
 	}
 	
-	public void relat() {
-		for(int i=0;i<mesa.length;i++) {
-			System.out.println(mesa[i]+", ");
+	//METODO PARA OCUPAR UMA MESA
+	public void ocupaMesa(int num) {
+		mesa[num] = 1;
+	}
+	
+	// METODO PARA LISTAR AS MESAS DISPONIVEIS
+	public String listaMesas() {
+		String msg = ""; 
+		for(int i=1;i<mesa.length;i++) {
+			if(mesa[i] == 0) {
+				msg += i+", ";
+			}
 		}
+		return msg;
 	}
+	 
+	 
+	
 }
+
