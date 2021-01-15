@@ -113,7 +113,8 @@ public class Lista {
 			atual = atual.getProx();
 		}
 		
-		return msg = "Numero da comanda: "+atual.getC().getComanda();
+		return msg = "Numero da comanda: "+atual.getC().getComanda() +"\n"+
+		             "Valor da comanda : "+atual.getC().getValor();
 		
 	}
 	

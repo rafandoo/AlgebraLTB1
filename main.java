@@ -29,6 +29,8 @@ public class main {
 					c = new adm();
 					System.out.print("\nDigite o numero da comanda: ");
 					c.setComanda(ent.next());
+					System.out.print("\nDigite o preço: R$");
+					c.setValor(ent.nextDouble());
 					rest.inserirIni(c);
 					break;
 					
@@ -53,6 +55,17 @@ public class main {
 					break;
 				
 				case '4':
+					if(rest.ehVazio()) {
+						System.out.println("A lista esta vazia!");
+					} else {
+						System.out.print("\nDigite o numero da comanda");
+						String numC = ent.next();
+						if(rest.pesquisaNodo(numC) == null) {
+							System.out.println("Comanda inexixtente");							
+						} else {
+							System.out.println(rest.pesquisaNodo(numC));
+						}
+					}
 					System.out.println();
 					break;
 					

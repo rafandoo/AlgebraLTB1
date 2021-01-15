@@ -1,9 +1,7 @@
 
 public class adm {
 	private String comanda;
-	
-	
-	
+	private double valor;
 	
 	public void setComanda(String comanda) {
 		this.comanda = comanda;
@@ -11,4 +9,13 @@ public class adm {
 	public String getComanda() {
 		return comanda;
 	}
+	
+	public void setValor(double valor) {
+		this.valor = valor;
+	}
+	public double getValor() {
+		return valor;
+	}
+	
+	
 }
