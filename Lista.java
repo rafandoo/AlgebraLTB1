@@ -85,25 +85,31 @@ public class Lista {
 		if(this.ehVazio()) {
 			return false;
 		} else {
-			while((atual != null)&&(!atual.getC().getComanda().equals(numC)));
+			while((atual != null)&&(!atual.getC().getComanda().equals(numC))) {
 			ant = atual;
 			atual = atual.getProx();
-		}
-		
-		if(atual == this.prim) {
-			if(this.prim == this.ult) {
-				this.ult = null;
 			}
-			this.prim = this.prim.getProx();
-		} else {
-			if(atual == this.ult) {
-				this.ult = ant;
-			}
-			ant.setProx(atual.getProx());
+			if(atual == this.prim) {
+				if(this.prim == this.ult) {
+					this.ult = null;
+				}
+				this.prim = this.prim.getProx();
+			} else {
+				if(atual == this.ult) {
+					this.ult = ant;
+				}
+				ant.setProx(atual.getProx());
 		}
 		this.QuantNodo--;
 		return true;
+		}
 	}
+	
+	private void mesaVazia() {
+		
+	}
+
+
 	
 	//METODO DE PESQUISA
 	public String pesquisaNodo(String numC) {
@@ -114,7 +120,8 @@ public class Lista {
 		}
 		
 		return msg = "Numero da comanda: "+atual.getC().getComanda() +"\n"+
-		             "Valor da comanda : "+atual.getC().getValor();
+		             "Valor da comanda : "+atual.getC().getValor() +"\n"+
+				     "Mesa: "+atual.getC().getMesas();
 		
 	}
 	

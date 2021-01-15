@@ -19,6 +19,7 @@ public class main {
 		Scanner ent = new Scanner(System.in);
 		Lista rest = new Lista();
 		adm c;
+		mesas m;
 		char opc;
 		
 		do {
@@ -27,10 +28,13 @@ public class main {
 				case '1':
 					System.out.println("---- Criando comanda ----");
 					c = new adm();
+					m = new mesas();
 					System.out.print("\nDigite o numero da comanda: ");
 					c.setComanda(ent.next());
 					System.out.print("\nDigite o preço: R$");
 					c.setValor(ent.nextDouble());
+					System.out.print("\nDigite a mesa desejada: ");
+					m.setMesa(ent.nextInt());
 					rest.inserirIni(c);
 					break;
 					
@@ -58,7 +62,7 @@ public class main {
 					if(rest.ehVazio()) {
 						System.out.println("A lista esta vazia!");
 					} else {
-						System.out.print("\nDigite o numero da comanda");
+						System.out.print("\nDigite o numero da comanda: ");
 						String numC = ent.next();
 						if(rest.pesquisaNodo(numC) == null) {
 							System.out.println("Comanda inexixtente");							

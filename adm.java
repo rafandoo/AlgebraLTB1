@@ -2,6 +2,7 @@
 public class adm {
 	private String comanda;
 	private double valor;
+	private int mesas;
 	
 	public void setComanda(String comanda) {
 		this.comanda = comanda;
@@ -16,6 +17,4 @@ public class adm {
 	public double getValor() {
 		return valor;
 	}
-	
-	
 }
