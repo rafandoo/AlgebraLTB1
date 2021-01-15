@@ -13,7 +13,7 @@ public class Lista {
 		this.QuantNodo = 0;
 	}
 	
-	// GETTERS E SETTERS
+	//GETTERS E SETTERS
 	public nodo getPrim() {
 		return prim;
 	}

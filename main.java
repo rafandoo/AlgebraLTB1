@@ -92,16 +92,13 @@ public class main {
 					break;
 					
 				case '6':
-					mesas m2 = new mesas();
-					System.out.println(m2.listaMesas());
+					
 					break;
 				case '7':
-					mesas m3 = new mesas();
-					m3.ocupaMesa(2);
-					System.out.println();
+					
 					break;
 				case '8':
-					mesas m4 = new mesas();
+					
 					m4.imprimeV();
 					
 				default:
