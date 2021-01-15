@@ -38,11 +38,12 @@ public class main {
 					
 					while(x) { //REVER ESSA PARTE
 						System.out.print("\nMesas disponiveis: ");
-						m.listaMesas();
+						System.out.print(m.listaMesas());
 						System.out.print("\nDigite a mesa desejada: ");
 						int mesa = ent.nextInt();
 						if(m.ehVazioM(mesa)) {
 							c.setMesas(mesa);
+							m.ocupaMesa(mesa);
 							break;
 						} else {
 							System.out.println("Mesa indisponivel.");
@@ -89,6 +90,19 @@ public class main {
 				case '5':
 					System.out.println("Finalizando programa");
 					break;
+					
+				case '6':
+					mesas m2 = new mesas();
+					System.out.println(m2.listaMesas());
+					break;
+				case '7':
+					mesas m3 = new mesas();
+					m3.ocupaMesa(2);
+					System.out.println();
+					break;
+				case '8':
+					mesas m4 = new mesas();
+					m4.imprimeV();
 					
 				default:
 					System.out.println("Opção invalida!");
