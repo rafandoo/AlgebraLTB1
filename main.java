@@ -18,7 +18,7 @@ public class main {
 	public static void main(String[] args) {
 		Scanner ent = new Scanner(System.in);
 		Lista rest = new Lista();
-		comandosmesas cm = new comandosmesas();
+		comandosmesas cm;
 		adm c;
 		mesas m;
 		char opc;
@@ -29,7 +29,7 @@ public class main {
 				case '1':
 					System.out.println("---- Criando comanda ----");
 					c = new adm();
-					m = new mesas();
+					cm = new comandosmesas();
 					boolean x=true;
 					
 					System.out.print("\nDigite o numero da comanda: ");
@@ -37,12 +37,13 @@ public class main {
 					System.out.print("\nDigite o preço: R$");
 					c.setValor(ent.nextDouble());
 					
-					while(x) { //REVER ESSA PARTE
+					while(x) { 											//REVER ESSA PARTE URGENTE!!!!
 						System.out.print("\nMesas disponiveis: ");
 						System.out.print(cm.imprimirMesas());
 						System.out.print("\nDigite a mesa desejada: ");
 						int mesa = ent.nextInt();
 					}
+					cm.ocupaMesa(null);
 					rest.inserirIni(c);
 					break;
 					
@@ -51,7 +52,7 @@ public class main {
 						System.out.println("Lista vazia!!");
 					} else {
 						System.out.print("\nDigite o numero da comanda: ");
-						String numC =ent.next();
+						String numC = ent.next();
 						if(rest.removeNodo(numC)) {
 							System.out.println(numC+" comanda cancelada com suceeso");
 						} else {
@@ -85,19 +86,22 @@ public class main {
 					System.out.println("Finalizando programa");
 					break;
 					
+					//TESTES
 				case '6':
+					cm = new comandosmesas();
 					System.out.print("\nMesas disponiveis: ");
 					System.out.print(cm.imprimirMesas());
 					System.out.println("");
 					break;
 				case '7':
-					m = new mesas();
-					m.setMesa(1);
-					cm.inserirIni(m);
+					cm = new comandosmesas();
+					inicializadora in = new inicializadora();
+					in.a();
 					break;
 				case '8':
-					
-					
+					cm = new comandosmesas();
+					cm.ocupaMesa("1");
+					System.out.println(cm.imprimirMesas());
 				default:
 					System.out.println("Opção invalida!");
 			}

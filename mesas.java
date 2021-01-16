@@ -1,11 +1,11 @@
 
 public class mesas {
-	private int mesa;
+	private String mesa;
 	
-	public int getMesa() {
+	public String getMesa() {
 		return mesa;
 	}
-	public void setMesa(int mesa) {
+	public void setMesa(String mesa) {
 		this.mesa = mesa;
 	}
 }

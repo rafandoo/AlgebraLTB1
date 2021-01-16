@@ -5,9 +5,9 @@ public class comandosmesas {
 	public comandosmesas() {
 		this.prim = null;
 		this.ult = null;
-		for(int i=1;i<11;i++) {
-			ini(i);
-		}
+		//for(int i=1;i<11;i++) {
+		//	ini(Integer.toString(i));
+		//}
 	}
 	
 	//ATRIBUTOS
@@ -30,7 +30,7 @@ public class comandosmesas {
 	}
 	
 	//INICIALIZADOR
-	public void ini(int x) {
+	public void ini(String x) {
 		mesas m2 = new mesas();
 		m2.setMesa(x);
 		inserirIni(m2);
@@ -74,7 +74,7 @@ public class comandosmesas {
 	}
 	
 	//METODO OCUPAR MESA
-	public boolean ocupamesa(String numM) {
+	public boolean ocupaMesa(String numM) {
 		nodo2 atual = this.prim;
 		nodo2 ant = null;
 		if(this.ehVazioM()) {
@@ -98,5 +98,4 @@ public class comandosmesas {
 		return true;
 		}
 	}
-	
-	
+}
