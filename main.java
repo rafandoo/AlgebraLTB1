@@ -18,6 +18,7 @@ public class main {
 	public static void main(String[] args) {
 		Scanner ent = new Scanner(System.in);
 		Lista rest = new Lista();
+		comandosmesas cm = new comandosmesas();
 		adm c;
 		mesas m;
 		char opc;
@@ -38,16 +39,16 @@ public class main {
 					
 					while(x) { //REVER ESSA PARTE
 						System.out.print("\nMesas disponiveis: ");
-						System.out.print(m.listaMesas());
+						System.out.print(cm.imprimirMesas());
 						System.out.print("\nDigite a mesa desejada: ");
 						int mesa = ent.nextInt();
-						if(m.ehVazioM(mesa)) {
+						/*if(m.ehVazioM(mesa)) {
 							c.setMesas(mesa);
 							m.ocupaMesa(mesa);
 							break;
 						} else {
 							System.out.println("Mesa indisponivel.");
-						}
+						}*/
 					}
 					rest.inserirIni(c);
 					break;
@@ -92,19 +93,22 @@ public class main {
 					break;
 					
 				case '6':
-					
+					System.out.print("\nMesas disponiveis: ");
+					System.out.print(cm.imprimirMesas());
+					System.out.println("");
 					break;
 				case '7':
-					
+					m = new mesas();
+					m.setMesa(1);
+					cm.inserirIni(m);
 					break;
 				case '8':
 					
-					m4.imprimeV();
 					
 				default:
 					System.out.println("Opção invalida!");
 			}
-		} while(opc != 5);
+		} while(opc != '5');
 		System.exit(0);
 	}	
 }

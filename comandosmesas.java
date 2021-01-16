@@ -1,7 +1,11 @@
 
 public class comandosmesas {
 	
-	//private int[] mesa = new int[11];
+	public comandosmesas() {
+		for(int i=1;i<11;i++) {
+			ini(i);
+		}
+	}
 	
 	//ATRIBUTOS
 	private nodo2 prim;
@@ -22,6 +26,14 @@ public class comandosmesas {
 		return ult;
 	}
 	
+	//INICIALIZADOR
+	public void ini(int x) {
+		mesas m2 = new mesas();
+		m2.setMesa(x);
+		inserirIni(m2);
+		
+	}
+	
 	//METODOS EHVAZIO
 	public boolean ehVazioM() {
 		return (this.prim == null);
@@ -37,6 +49,27 @@ public class comandosmesas {
 		this.prim = NvNodo2;
 	}
 	
+	//METODO DE INSERSÂO 2
+	public void inserirUlt(mesas m) {
+		nodo2 NvNodo2 = new nodo2(m);
+		if(this.ehVazioM()) {
+			this.prim = NvNodo2; 
+		} else {
+			this.ult.setProx(NvNodo2);
+		}
+		this.ult = NvNodo2;
+	}
+	
+	//METODO IMPRESSÃO
+	public String imprimirMesas() {
+		String msg = "";
+		nodo2 atual = this.prim;
+		while(atual != null) {
+			msg += atual.getM().getMesa() + " - ";
+			atual = atual.getProx();
+		}
+		return msg;
+	}
 	
 	
 	
