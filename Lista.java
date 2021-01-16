@@ -105,12 +105,6 @@ public class Lista {
 		}
 	}
 	
-	private void mesaVazia() {
-		
-	}
-
-
-	
 	//METODO DE PESQUISA
 	public String pesquisaNodo(String numC) {
 		String msg = "";

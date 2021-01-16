@@ -1,7 +1,10 @@
 
 public class comandosmesas {
 	
+	//CONSTRUTOR
 	public comandosmesas() {
+		this.prim = null;
+		this.ult = null;
 		for(int i=1;i<11;i++) {
 			ini(i);
 		}
@@ -31,7 +34,6 @@ public class comandosmesas {
 		mesas m2 = new mesas();
 		m2.setMesa(x);
 		inserirIni(m2);
-		
 	}
 	
 	//METODOS EHVAZIO
@@ -71,51 +73,30 @@ public class comandosmesas {
 		return msg;
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	/*
-	
-	//METODO IMPRIME VETOR
-	public void imprimeV() {
-		for(int i=1;i<mesa.length;i++) {
-			System.out.println(mesa[i]);
-		}
-	}
-	//METODO PARA TESTAR SE A MESA ESTA VAZIA
-	public boolean ehVazioM(int num) {
-		return(this.mesa[num] == 0);
-	}
-	
-	//METODO PARA OCUPAR UMA MESA
-	public void ocupaMesa(int num) {
-		System.out.println(num);
-		mesa[num] = 1;
-		System.out.println(mesa[num]);
-	}
-	
-	// METODO PARA LISTAR AS MESAS DISPONIVEIS
-	public String listaMesas() {
-		String msg = ""; 
-		for(int i=1;i<mesa.length;i++) {
-			if(this.ehVazioM(mesa[i])) {
-				msg += Integer.toString(i)+", ";
-				//System.out.print(i+", ");
-			} else {
-				System.out.println("codigo de erro");
+	//METODO OCUPAR MESA
+	public boolean ocupamesa(String numM) {
+		nodo2 atual = this.prim;
+		nodo2 ant = null;
+		if(this.ehVazioM()) {
+			return false;
+		} else {
+			while((atual != null)&&(!atual.getM().getMesa().equals(numM))) {
+			ant = atual;
+			atual = atual.getProx();
 			}
+			if(atual == this.prim) {
+				if(this.prim == this.ult) {
+					this.ult = null;
+				}
+				this.prim = this.prim.getProx();
+			} else {
+				if(atual == this.ult) {
+					this.ult = ant;
+				}
+				ant.setProx(atual.getProx());
 		}
-		return msg;
-	}*/
-}
-
-
+		return true;
+		}
+	}
+	
 	

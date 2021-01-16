@@ -42,13 +42,6 @@ public class main {
 						System.out.print(cm.imprimirMesas());
 						System.out.print("\nDigite a mesa desejada: ");
 						int mesa = ent.nextInt();
-						/*if(m.ehVazioM(mesa)) {
-							c.setMesas(mesa);
-							m.ocupaMesa(mesa);
-							break;
-						} else {
-							System.out.println("Mesa indisponivel.");
-						}*/
 					}
 					rest.inserirIni(c);
 					break;
