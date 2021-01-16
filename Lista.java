@@ -119,4 +119,98 @@ public class Lista {
 		
 	}
 	
+	//-------------------------
+	
+	private nodo2 prim2;
+	private nodo2 ult2;
+	
+	//GETTERS E SETTERS
+	public void setPrim2(nodo2 prim2) {
+		this.prim2 = prim2;
+	}
+	public nodo2 getPrim2() {
+		return prim2;
+	}
+	
+	public void setUlt(nodo2 ult2) {
+		this.ult2 = ult2;
+	}
+	public nodo2 getUlt2() {
+		return ult2;
+	}
+	
+	//INICIALIZADOR
+	public void ini(String x) {
+		mesas m2 = new mesas();
+		m2.setMesa(x);
+		inserirIni(m2);
+	}
+	
+	//METODOS EHVAZIO
+	public boolean ehVazioM() {
+		return (this.prim == null);
+	}
+	
+	//METODO DE INSERSÂO
+	public void inserirIni(mesas m) {
+		nodo2 NvNodo2 = new nodo2(m);
+		if(this.ehVazioM()) {
+			this.ult2 = NvNodo2;
+		}
+		NvNodo2.setProx2(this.prim2);
+		this.prim2 = NvNodo2;
+	}
+	
+	//METODO DE INSERSÂO 2
+	public void inserirUlt(mesas m) {
+		nodo2 NvNodo2 = new nodo2(m);
+		if(this.ehVazioM()) {
+			this.prim2 = NvNodo2; 
+		} else {
+			this.ult2.setProx2(NvNodo2);
+		}
+		this.ult2 = NvNodo2;
+	}
+	
+	//METODO IMPRESSÃO
+	public String imprimirMesas() {
+		String msg = "";
+		nodo2 atual = this.prim2;
+		while(atual != null) {
+			msg += atual.getM().getMesa() + " - ";
+			atual = atual.getProx2();
+		}
+		return msg;
+	}
+	
+	//METODO OCUPAR MESA
+	public boolean ocupaMesa(String numM) {
+		nodo2 atual = this.prim2;
+		nodo2 ant = null;
+		if(this.ehVazioM()) {
+			return false;
+		} else {
+			while((atual != null)&&(!atual.getM().getMesa().equals(numM))) {
+			ant = atual;
+			atual = atual.getProx2();
+			}
+			if(atual == this.prim2) {
+				if(this.prim == this.ult) {
+					this.ult = null;
+				}
+				this.prim = this.prim.getProx();
+			} else {
+				if(atual == this.ult2) {
+					this.ult2 = ant;
+				}
+				ant.setProx2(atual.getProx2());
+		}
+		return true;
+		}
+	}
 }
+	
+	
+	
+	
+

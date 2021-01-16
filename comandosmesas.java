@@ -5,9 +5,7 @@ public class comandosmesas {
 	public comandosmesas() {
 		this.prim = null;
 		this.ult = null;
-		//for(int i=1;i<11;i++) {
-		//	ini(Integer.toString(i));
-		//}
+		
 	}
 	
 	//ATRIBUTOS
@@ -47,7 +45,7 @@ public class comandosmesas {
 		if(this.ehVazioM()) {
 			this.ult = NvNodo2;
 		}
-		NvNodo2.setProx(this.prim);
+		NvNodo2.setProx2(this.prim);
 		this.prim = NvNodo2;
 	}
 	
@@ -57,7 +55,7 @@ public class comandosmesas {
 		if(this.ehVazioM()) {
 			this.prim = NvNodo2; 
 		} else {
-			this.ult.setProx(NvNodo2);
+			this.ult.setProx2(NvNodo2);
 		}
 		this.ult = NvNodo2;
 	}
@@ -68,7 +66,7 @@ public class comandosmesas {
 		nodo2 atual = this.prim;
 		while(atual != null) {
 			msg += atual.getM().getMesa() + " - ";
-			atual = atual.getProx();
+			atual = atual.getProx2();
 		}
 		return msg;
 	}

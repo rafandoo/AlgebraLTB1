@@ -15,10 +15,10 @@ public class nodo2 {
 		this.m = m;
 	}
 	
-	public nodo2 getProx() {
+	public nodo2 getProx2() {
 		return prox;
 	}
-	public void setProx(nodo2 prox) {
+	public void setProx2(nodo2 prox) {
 		this.prox = prox;
 	}
 }

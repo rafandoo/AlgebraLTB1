@@ -95,13 +95,17 @@ public class main {
 					break;
 				case '7':
 					cm = new comandosmesas();
-					inicializadora in = new inicializadora();
-					in.a();
+					
+					
 					break;
 				case '8':
 					cm = new comandosmesas();
-					cm.ocupaMesa("1");
-					System.out.println(cm.imprimirMesas());
+					m = new mesas();
+					
+					m.setMesa("1");
+					rest.inserirIni(m);
+					
+					System.out.println(rest.imprimirMesas());
 				default:
 					System.out.println("Opção invalida!");
 			}
