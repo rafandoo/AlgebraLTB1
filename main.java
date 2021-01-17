@@ -18,7 +18,6 @@ public class main {
 	public static void main(String[] args) {
 		Scanner ent = new Scanner(System.in);
 		Lista rest = new Lista();
-		comandosmesas cm;
 		adm c;
 		mesas m;
 		char opc;
@@ -29,7 +28,6 @@ public class main {
 				case '1':
 					System.out.println("---- Criando comanda ----");
 					c = new adm();
-					cm = new comandosmesas();
 					boolean x=true;
 					
 					System.out.print("\nDigite o numero da comanda: ");
@@ -39,11 +37,11 @@ public class main {
 					
 					while(x) { 											//REVER ESSA PARTE URGENTE!!!!
 						System.out.print("\nMesas disponiveis: ");
-						System.out.print(cm.imprimirMesas());
+						System.out.print(rest.imprimirMesas());
 						System.out.print("\nDigite a mesa desejada: ");
 						int mesa = ent.nextInt();
 					}
-					cm.ocupaMesa(null);
+					rest.ocupaMesa(null);
 					rest.inserirIni(c);
 					break;
 					
@@ -88,18 +86,18 @@ public class main {
 					
 					//TESTES
 				case '6':
-					cm = new comandosmesas();
+
 					System.out.print("\nMesas disponiveis: ");
-					System.out.print(cm.imprimirMesas());
+					System.out.print(rest.imprimirMesas());
 					System.out.println("");
 					break;
 				case '7':
-					cm = new comandosmesas();
+
 					
 					
 					break;
 				case '8':
-					cm = new comandosmesas();
+
 					m = new mesas();
 					
 					m.setMesa("1");
