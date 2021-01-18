@@ -167,12 +167,15 @@ public class main {
 						
 						}
 					} else {
-						erro();
+						erro(); //REVER
 					}
 					
 				case '2':
 					if (abrir) {
-						//colocar fila aqui
+						System.out.print("\nNumero de pessoas na fila: ");
+						System.out.print(filaR.getTotalRest()+"\n");
+						System.out.print("\nNumero de pessoas almocando: ");
+						System.out.print(filaR.getTotalAlm()+"\n");
 						
 						c = new adm();
 						m = new mesas();
@@ -203,6 +206,7 @@ public class main {
 							}
 						}
 						rest.inserirIni(c);
+						filaR.removeIniR();
 					} else {
 						System.out.println("RESTAURANTE FECHADO!");
 					}

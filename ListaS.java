@@ -115,7 +115,7 @@ public class ListaS {
 			while((atual != null) && (!atual.getC().getComanda().equals(numC))) {
 				atual = atual.getProx();
 			}
-			return (atual.getC().getMesas()); //RETORNA O VALOR ACUMULADO NA COMANDA
+			return (atual.getC().getMesas()); //RETORNA O VALOR DA MESA
 		}
 	
 	//-------------------------

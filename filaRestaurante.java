@@ -14,6 +14,8 @@ public class filaRestaurante {
 	private int totalRest;
 	private int totalCX;
 	
+	private int totalAlm;
+	
 	//CONSTRUTOR
 	public filaRestaurante() {
 		this.filaRest = new int [11];
@@ -27,6 +29,7 @@ public class filaRestaurante {
 		
 		this.totalRest = 0;
 		this.totalCX = 0;
+		this.totalAlm = 0;
 	}
 	
 	
@@ -45,7 +48,12 @@ public class filaRestaurante {
 		this.totalRest = totalRest;
 	}
 	
-	
+	public int getTotalAlm() {
+		return totalAlm;
+	}
+	public void setTotalAlm(int totalAlm) {
+		this.totalAlm = totalAlm;
+	}
 	
 	//METODO PARA INSERIR ELEMENTOS FILA REST
 	public void inserirFimR(int num) {
@@ -66,6 +74,7 @@ public class filaRestaurante {
 			this.filaCX [this.ultCX] = num;
 			this.ultCX = ((this.ultCX + 1) % this.filaCX.length);
 			this.totalCX++;	
+			this.totalAlm--;
 		}
 	}
 	
@@ -78,6 +87,7 @@ public class filaRestaurante {
 			int aux = filaRest[this.primRest];
 			this.primRest = ((this.primRest + 1) % this.filaRest.length);
 			this.totalRest--;
+			this.totalAlm++;
 			return aux;
 		}
 	}
