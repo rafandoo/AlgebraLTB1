@@ -74,8 +74,8 @@ public class ListaS {
 		return msg;
 	}
 	
-	//METODO CANCELA COMANDA
-	public boolean removeComanda(String numC) {
+	//METODO PAGA COMANDA
+	public boolean pagaComanda(String numC) {
 		nodo atual = this.prim;
 		nodo ant = null;
 		if(this.ehVazio()) {
@@ -96,24 +96,27 @@ public class ListaS {
 				}
 				ant.setProx(atual.getProx());
 		}
-		this.QuantComandas--;
 		return true;
 		}
 	}
 	
-	//METODO DE PESQUISA COMANDA
-	public String pesquisaComanda(String numC) {
-		String msg = "";
+	//METODO DE PESQUISA COMANDA VALOR
+	public double pesquisaValor(String numC) {
 		nodo atual = this.prim;
 		while((atual != null) && (!atual.getC().getComanda().equals(numC))) {
 			atual = atual.getProx();
 		}
-		
-		return msg = "Numero da comanda: "+atual.getC().getComanda() +"\n"+
-		             "Valor da comanda : "+atual.getC().getValor() +"\n"+
-				     "Mesa: "+atual.getC().getMesas();
-		
+		return (atual.getC().getValor()); //RETORNA O VALOR ACUMULADO NA COMANDA
 	}
+	
+	//METODO DE PESQUISA COMANDA MESA
+		public String pesquisaMesa(String numC) {
+			nodo atual = this.prim;
+			while((atual != null) && (!atual.getC().getComanda().equals(numC))) {
+				atual = atual.getProx();
+			}
+			return (atual.getC().getMesas()); //RETORNA O VALOR ACUMULADO NA COMANDA
+		}
 	
 	//-------------------------
 	

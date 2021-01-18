@@ -182,3 +182,28 @@ public class temp {
 		System.exit(0);
 	}	
 }
+
+
+
+case '2':
+	if (abrir) {
+		//colocar fila aqui
+		
+		c = new adm();
+		m = new mesas();
+		
+		System.out.println("Sirva-se em nosso buffet livre, valor R$15,00 por pessoa");
+		System.out.print("\nDigite o numero da comanda: ");
+		c.setComanda(ent.next());
+		System.out.println("Deseja incluir uma bebida? (S/N)");
+		esclh = ent.next().toUpperCase();
+		if(esclh.charAt(0) == 'S') {
+			System.out.println("== CARDAPIO DE BEBIDAS ==");
+			System.out.println("= 1- Soda Laranjadinha 600ml (R$4,50)         =");
+			System.out.println("= 2- Suco natural de laranja 350ml (R$6,30)   =");
+			System.out.println("= 3- Pepsh Cola 1,5L (R$7,25)                 =");
+			System.out.println("= 4- Achocolatado Choque Leite 260ml (R$2,60) =");
+		}
+	} else {
+		System.out.println("RESTAURANTE FECHADO!");
+	}

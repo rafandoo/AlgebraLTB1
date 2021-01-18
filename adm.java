@@ -2,7 +2,7 @@
 public class adm {
 	private String comanda;
 	private double valor;
-	private int mesas;
+	private String mesas;
 	
 	public void setComanda(String comanda) {
 		this.comanda = comanda;
@@ -18,10 +18,10 @@ public class adm {
 		return valor;
 	}
 	
-	public void setMesas(int mesas) {
+	public void setMesas(String mesas) {
 		this.mesas = mesas;
 	}
-	public int getMesas() {
+	public String getMesas() {
 		return mesas;
 	}
 }
