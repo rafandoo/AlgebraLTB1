@@ -16,6 +16,11 @@ public class filaRestaurante {
 	
 	private int totalAlm;
 	
+	private int[] pratos;
+	private int primPrato;
+	private int ultPrato;
+	private int quantPrato;
+	
 	//CONSTRUTOR
 	public filaRestaurante() {
 		this.filaRest = new int [11];
