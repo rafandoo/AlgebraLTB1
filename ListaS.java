@@ -204,14 +204,14 @@ public class ListaS {
 	}
 	
 	//METODO DE PESQUISA COMANDA
-		public boolean pesquisaNodo2(String numM) {
-			nodoMesas atual2 = this.primM;
-			while((atual2 != null) && (!atual2.getM().getMesa().equals(numM))) {
-				atual2 = atual2.getProxM();
-			}
-		return true;
-			
+	public boolean pesquisaNodo2(String numM) {
+		nodoMesas atual2 = this.primM;
+		while((atual2 != null) && (!atual2.getM().getMesa().equals(numM))) {
+			atual2 = atual2.getProxM();
 		}
+	return true;
+		
+	}
 }
 
 	
