@@ -97,13 +97,74 @@ public class main {
 					
 					break;
 				case '8':
-
-					m = new mesas();
+					int i=1;
+					while(i!=11) {
+						
+						if(i==1) {
+							m = new mesas();
+							m.setMesa("1");
+							rest.inserirIni(m);
+							i++;
+						}
+						if(i==2) {
+							m = new mesas();
+							m.setMesa("2");
+							rest.inserirIni(m);
+							i++;
+						}
+						if(i==3) {
+							m = new mesas();
+							m.setMesa("3");
+							rest.inserirIni(m);
+							i++;
+						}
+						if(i==4) {
+							m = new mesas();
+							m.setMesa("4");
+							rest.inserirIni(m);
+							i++;
+						}
+						if(i==5) {
+							m = new mesas();
+							m.setMesa("5");
+							rest.inserirIni(m);
+							i++;
+						}
+						if(i==6) {
+							m = new mesas();
+							m.setMesa("6");
+							rest.inserirIni(m);
+							i++;
+						}	
+						if(i==7) {
+							m = new mesas();
+							m.setMesa("7");
+							rest.inserirIni(m);
+							i++;
+						}
+						if(i==8) {
+							m = new mesas();
+							m.setMesa("8");
+							rest.inserirIni(m);
+							i++;
+						}
+						if(i==9) {
+							m = new mesas();
+							m.setMesa("9");
+							rest.inserirIni(m);
+							i++;
+						}
+						if(i==10) {
+							m = new mesas();
+							m.setMesa("10");
+							rest.inserirIni(m);
+							i++;
+						}
 					
-					m.setMesa("1");
-					rest.inserirIni(m);
+					}
 					
 					System.out.println(rest.imprimirMesas());
+					
 				default:
 					System.out.println("Opção invalida!");
 			}

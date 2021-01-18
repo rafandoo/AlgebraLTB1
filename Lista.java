@@ -1,6 +1,9 @@
 
 public class Lista {
 
+	
+	mesas m = new mesas();
+	
 	//ATRIBUTOS
 	private nodo prim;
 	private nodo ult;
@@ -11,6 +14,10 @@ public class Lista {
 		this.prim = null;
 		this.ult = null;
 		this.QuantNodo = 0;
+		
+		this.prim2 = null;
+		this.ult2 = null;
+		
 	}
 	
 	//GETTERS E SETTERS
@@ -132,20 +139,18 @@ public class Lista {
 		return prim2;
 	}
 	
-	public void setUlt(nodo2 ult2) {
+	public void setUlt2(nodo2 ult2) {
 		this.ult2 = ult2;
 	}
 	public nodo2 getUlt2() {
 		return ult2;
 	}
 	
-	//INICIALIZADOR
-	public void ini(String x) {
-		mesas m2 = new mesas();
-		m2.setMesa(x);
-		inserirIni(m2);
+	public void nulador() {
+		this.prim2=null;
+		this.ult2=null;
+		m.setMesa(null);
 	}
-	
 	//METODOS EHVAZIO
 	public boolean ehVazioM() {
 		return (this.prim == null);
@@ -159,6 +164,7 @@ public class Lista {
 		}
 		NvNodo2.setProx2(this.prim2);
 		this.prim2 = NvNodo2;
+		NvNodo2 = null;
 	}
 	
 	//METODO DE INSERSÂO 2
@@ -182,7 +188,7 @@ public class Lista {
 		}
 		return msg;
 	}
-	
+
 	//METODO OCUPAR MESA
 	public boolean ocupaMesa(String numM) {
 		nodo2 atual = this.prim2;
