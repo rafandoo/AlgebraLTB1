@@ -18,8 +18,8 @@ public class filaRestaurante {
 	
 	//CONSTRUTOR
 	public filaRestaurante() {
-		this.filaRest = new int [11];
-		this.filaCX = new int[11];
+		this.filaRest = new int [15];
+		this.filaCX = new int[15];
 		
 		this.primRest = 0;
 		this.primCX = 0;

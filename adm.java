@@ -1,32 +1,22 @@
 
 public class adm {
-	private String comanda;
-	private double valor;
-	private String mesas;
-
 	
-	public void setComanda(String comanda) {
-		this.comanda = comanda;
-	}
-	public String getComanda() {
-		return comanda;
-	}
+	//ATRIBUTOS
+	private int quantAtend =0;
+	private float valorbuffet = 0.00f;
 	
-	public void setValor(double valor) {
-		this.valor = valor;
+	//GETTERS E SETTERS
+	public int getQuantAtend() {
+		return quantAtend;
 	}
-	public double getValor() {
-		return valor;
+	public void setQuantAtend(int quantAtend) {
+		this.quantAtend = quantAtend;
 	}
 	
-	public void setMesas(String mesas) {
-		this.mesas = mesas;
+	public float getValorbuffet() {
+		return valorbuffet;
 	}
-	public String getMesas() {
-		return mesas;
+	public void setValorbuffet(float valorbuffet) {
+		this.valorbuffet = valorbuffet;
 	}
-	
-
-	
-	
 }

@@ -1,16 +1,16 @@
 
 public class nodo {
-	private adm c;
+	private comanda c;
 	private nodo prox;
 	
-	public nodo(adm c) {
+	public nodo(comanda c) {
 		this.c = c;
 		this.prox = null;
 	}
-	public adm getC() {
+	public comanda getC() {
 		return c;
 	}
-	public void setC(adm c) {
+	public void setC(comanda c) {
 		this.c = c;
 	}
 	

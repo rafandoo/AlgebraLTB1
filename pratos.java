@@ -1,24 +1,25 @@
+
 public class pratos{
 
   //ATRIBUTOS DOS PRATOS 
-	private int[] p_prato;
+	private int[] p_pratos;
 	private int primPrato;
 	private int ultPrato;
-	private int quantPrato;
+	private int quantPratos;
 	
 	public pratos() {
-		this.p_prato = new int[100];
+		this.p_pratos = new int[20];
 		this.primPrato = 0;
 		this.ultPrato = 0;
-		this.quantPrato = 0;
-	
+		this.quantPratos = 0;
+	}
 	
 	//GETTER E SETTER
 	public int getQuantPrato() {
-		return quantPrato;
+		return quantPratos;
 	}
 	public void setQuantPrato(int quantPrato) {
-		this.quantPrato = quantPrato;
+		this.quantPratos = quantPrato;
 	}
 	
 	//METODO PARA COLOCAR/REPOR PRATOS
@@ -26,9 +27,9 @@ public class pratos{
 		if(this.ehCheioPilha()) {
 			System.out.println("A pilha de pratos esta cheia!");
 		} else {
-			this.p_pratos [this.ultPratos] = num;
-			this.ultPratos = ((this.ultPratos + 1) % this.p_pratos.length);
-			this.quantPrato++;	
+			this.p_pratos [this.ultPrato] = num;
+			this.ultPrato = ((this.ultPrato + 1) % this.p_pratos.length);
+			this.quantPratos++;	
 		}
 	}
 	
@@ -51,7 +52,7 @@ public class pratos{
 	}
 	
 	//METODO PARA VERIFICAR SE A PILHA DE PRATOS ESTA CHEIA
-	public boolean ehVazioPilha() {
-		return (this.quantPratos == 0);
+	public boolean ehCheioPilha() {
+		return (this.quantPratos == 19);
 	}
 }

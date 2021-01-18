@@ -48,7 +48,7 @@ public class ListaS {
 	}
 	
 	//METODO INSERIR NO INICIO
-	public void inserirIni(adm c) {
+	public void inserirIni(comanda c) {
 		nodo NvNodo = new nodo(c);
 		if(this.ehVazio()) {
 			this.ult = NvNodo;
