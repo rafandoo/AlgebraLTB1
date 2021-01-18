@@ -70,6 +70,7 @@ public class main {
 	public static void main(String[] args) {
 		Scanner ent = new Scanner(System.in);
 		ListaS rest = new ListaS();
+		filaRestaurante filaR = new filaRestaurante();
 		adm c;
 		mesas m;
 		char opc;
@@ -91,62 +92,75 @@ public class main {
 								m = new mesas();
 								m.setMesa("1");
 								rest.inserirIni(m);
+								filaR.inserirFimR(i);
 								i++;
 							}
 							if(i==2) {
 								m = new mesas();
 								m.setMesa("2");
 								rest.inserirIni(m);
+								filaR.inserirFimR(i);
 								i++;
 							}
 							if(i==3) {
 								m = new mesas();
 								m.setMesa("3");
 								rest.inserirIni(m);
+								filaR.inserirFimR(i);
 								i++;
 							}
 							if(i==4) {
 								m = new mesas();
 								m.setMesa("4");
 								rest.inserirIni(m);
+								filaR.inserirFimR(i);
 								i++;
 							}
 							if(i==5) {
 								m = new mesas();
 								m.setMesa("5");
 								rest.inserirIni(m);
+								filaR.inserirFimR(i);
 								i++;
 							}
 							if(i==6) {
 								m = new mesas();
 								m.setMesa("6");
 								rest.inserirIni(m);
+								filaR.inserirFimR(i);
 								i++;
 							}	
 							if(i==7) {
 								m = new mesas();
 								m.setMesa("7");
 								rest.inserirIni(m);
+								filaR.inserirFimR(i);
 								i++;
 							}
 							if(i==8) {
 								m = new mesas();
 								m.setMesa("8");
 								rest.inserirIni(m);
+								filaR.inserirFimR(i);
 								i++;
 							}
 							if(i==9) {
 								m = new mesas();
 								m.setMesa("9");
 								rest.inserirIni(m);
+								filaR.inserirFimR(i);
 								i++;
 							}
 							if(i==10) {
 								m = new mesas();
 								m.setMesa("10");
 								rest.inserirIni(m);
+								filaR.inserirFimR(i);
 								i++;
 							}
+							
+							
+							
 							System.out.println("Inicialização concluida com sucesso!");
 							abrir = true;
 
@@ -220,6 +234,7 @@ public class main {
 					System.out.println("Opção invalida!");
 			}
 		} while(opc != '6');
+		ent.close();
 		System.exit(0);
 	}	
 }
