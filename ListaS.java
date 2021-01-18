@@ -1,5 +1,5 @@
 
-public class Lista {
+public class ListaS {
 
 	
 	mesas m = new mesas();
@@ -7,16 +7,16 @@ public class Lista {
 	//ATRIBUTOS
 	private nodo prim;
 	private nodo ult;
-	private int QuantNodo;
+	private int QuantComandas;
 	
 	//CONSTRUTOR 
-	public Lista() {        
+	public ListaS() {        
 		this.prim = null;
 		this.ult = null;
-		this.QuantNodo = 0;
+		this.QuantComandas = 0;
 		
-		this.prim2 = null;
-		this.ult2 = null;
+		this.primM = null;
+		this.ultM = null;
 		
 	}
 	
@@ -35,11 +35,11 @@ public class Lista {
 		this.ult = ult;
 	}
 	
-	public int getQuantNodo() {
-		return QuantNodo;
+	public int getQuantComandas() {
+		return QuantComandas;
 	}
-	public void setQuantNodo(int quantNodo) {
-		QuantNodo = quantNodo;
+	public void setQuantComandas(int quantComandas) {
+		this.QuantComandas = quantComandas;
 	}
 	
 	//METODO DE TESTE NODO VAZIO
@@ -55,20 +55,9 @@ public class Lista {
 		}
 		NvNodo.setProx(this.prim);
 		this.prim = NvNodo;
-		this.QuantNodo++;
+		this.QuantComandas++;
 	}
 	
-	//METODO INSERIR NO FIM
-	public void inserirUlt(adm c) {
-		nodo NvNodo = new nodo(c);
-		if(this.ehVazio()) {
-			this.prim = NvNodo;
-		} else {
-			this.ult.setProx(NvNodo);
-		}
-		this.ult = NvNodo;
-		this.QuantNodo++;
-	}
 	
 	//METODO IMPRIMIR COMANDA
 	public String imprimirLista() {
@@ -86,7 +75,7 @@ public class Lista {
 	}
 	
 	//METODO CANCELA COMANDA
-	public boolean removeNodo(String numC) {
+	public boolean removeComanda(String numC) {
 		nodo atual = this.prim;
 		nodo ant = null;
 		if(this.ehVazio()) {
@@ -107,13 +96,13 @@ public class Lista {
 				}
 				ant.setProx(atual.getProx());
 		}
-		this.QuantNodo--;
+		this.QuantComandas--;
 		return true;
 		}
 	}
 	
-	//METODO DE PESQUISA
-	public String pesquisaNodo(String numC) {
+	//METODO DE PESQUISA COMANDA
+	public String pesquisaComanda(String numC) {
 		String msg = "";
 		nodo atual = this.prim;
 		while((atual != null) && (!atual.getC().getComanda().equals(numC))) {
@@ -128,93 +117,100 @@ public class Lista {
 	
 	//-------------------------
 	
-	private nodo2 prim2;
-	private nodo2 ult2;
+	private nodoMesas primM;
+	private nodoMesas ultM;
 	
 	//GETTERS E SETTERS
-	public void setPrim2(nodo2 prim2) {
-		this.prim2 = prim2;
+	public void setPrimM(nodoMesas primM) {
+		this.primM = primM;
 	}
-	public nodo2 getPrim2() {
-		return prim2;
-	}
-	
-	public void setUlt2(nodo2 ult2) {
-		this.ult2 = ult2;
-	}
-	public nodo2 getUlt2() {
-		return ult2;
+	public nodoMesas getPrimM() {
+		return primM;
 	}
 	
-	public void nulador() {
-		this.prim2=null;
-		this.ult2=null;
-		m.setMesa(null);
+	public void setUltM(nodoMesas ultM) {
+		this.ultM = ultM;
 	}
+	public nodoMesas getUltM() {
+		return ultM;
+	}
+
+	
 	//METODOS EHVAZIO
 	public boolean ehVazioM() {
-		return (this.prim == null);
+		return (this.primM == null);
 	}
 	
 	//METODO DE INSERSÂO
 	public void inserirIni(mesas m) {
-		nodo2 NvNodo2 = new nodo2(m);
+		nodoMesas NvNodo2 = new nodoMesas(m);
 		if(this.ehVazioM()) {
-			this.ult2 = NvNodo2;
+			this.ultM = NvNodo2;
 		}
-		NvNodo2.setProx2(this.prim2);
-		this.prim2 = NvNodo2;
+		NvNodo2.setProxM(this.primM);
+		this.primM = NvNodo2;
 		NvNodo2 = null;
 	}
 	
 	//METODO DE INSERSÂO 2
 	public void inserirUlt(mesas m) {
-		nodo2 NvNodo2 = new nodo2(m);
+		nodoMesas NvNodo2 = new nodoMesas(m);
 		if(this.ehVazioM()) {
-			this.prim2 = NvNodo2; 
+			this.primM = NvNodo2; 
 		} else {
-			this.ult2.setProx2(NvNodo2);
+			this.ultM.setProxM(NvNodo2);
 		}
-		this.ult2 = NvNodo2;
+		this.ultM = NvNodo2;
 	}
 	
 	//METODO IMPRESSÃO
 	public String imprimirMesas() {
 		String msg = "";
-		nodo2 atual = this.prim2;
+		nodoMesas atual = this.primM;
 		while(atual != null) {
 			msg += atual.getM().getMesa() + " - ";
-			atual = atual.getProx2();
+			atual = atual.getProxM();
 		}
 		return msg;
 	}
 
 	//METODO OCUPAR MESA
 	public boolean ocupaMesa(String numM) {
-		nodo2 atual = this.prim2;
-		nodo2 ant = null;
+		nodoMesas atualM = this.primM;
+		nodoMesas antM = null;
 		if(this.ehVazioM()) {
 			return false;
 		} else {
-			while((atual != null)&&(!atual.getM().getMesa().equals(numM))) {
-			ant = atual;
-			atual = atual.getProx2();
+			while((atualM != null)&&(!atualM.getM().getMesa().equals(numM))) {
+			antM = atualM;
+			atualM = atualM.getProxM();
 			}
-			if(atual == this.prim2) {
-				if(this.prim == this.ult) {
-					this.ult = null;
+			if(atualM == this.primM) {
+				if(this.primM == this.ultM) {
+					this.ultM = null;
 				}
-				this.prim = this.prim.getProx();
+				this.primM = this.primM.getProxM();
 			} else {
-				if(atual == this.ult2) {
-					this.ult2 = ant;
+				if(atualM == this.ultM) {
+					this.ultM = antM;
 				}
-				ant.setProx2(atual.getProx2());
+				antM.setProxM(atualM.getProxM());
 		}
 		return true;
 		}
 	}
+	
+	//METODO DE PESQUISA COMANDA
+		public boolean pesquisaNodo2(String numM) {
+			nodoMesas atual2 = this.primM;
+			while((atual2 != null) && (!atual2.getM().getMesa().equals(numM))) {
+				atual2 = atual2.getProxM();
+			}
+		return true;
+			
+		}
 }
+
 	
 	
 	

@@ -1,9 +1,9 @@
 
-public class nodo2 {
+public class nodoMesas {
 	private mesas m;
-	private nodo2 prox;
+	private nodoMesas prox;
 	
-	public nodo2(mesas m) {
+	public nodoMesas(mesas m) {
 		this.m = m;
 		this.prox = null;
 	}
@@ -15,10 +15,10 @@ public class nodo2 {
 		this.m = m;
 	}
 	
-	public nodo2 getProx2() {
+	public nodoMesas getProxM() {
 		return prox;
 	}
-	public void setProx2(nodo2 prox) {
+	public void setProxM(nodoMesas prox) {
 		this.prox = prox;
 	}
 }
