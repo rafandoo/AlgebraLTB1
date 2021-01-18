@@ -3,6 +3,7 @@ public class adm {
 	private String comanda;
 	private double valor;
 	private String mesas;
+
 	
 	public void setComanda(String comanda) {
 		this.comanda = comanda;
@@ -24,4 +25,8 @@ public class adm {
 	public String getMesas() {
 		return mesas;
 	}
+	
+
+	
+	
 }

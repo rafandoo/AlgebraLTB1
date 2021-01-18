@@ -1,7 +1,8 @@
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class main {
-
+	
 	//METODO PARA LIMPAR A TELA DE SAIDA
 	private static void limpaTela() {
 		System.out.println("\n\n\n\n\n\n\n\n");
@@ -12,6 +13,11 @@ public class main {
         if (scanner.hasNextLine()) {
             scanner.nextLine();
         }
+	}
+	
+	//METODO DE ARREDONDAMENTO MONETARIO
+	private static String arredondar(double n) {
+		return (new DecimalFormat("#,##0.00").format(n));
 	}
 	
 	//TESTES
@@ -85,7 +91,9 @@ public class main {
 					String esclh = ent.next().toUpperCase();
 					if(esclh.charAt(0) == 'S') {
 						
-						int i=1; //INICIALIZA AS MESAS
+						
+						
+						int i=1; //INICIALIZA AS MESAS E A FILA
 						while(i!=11) {
 							
 							if(i==1) {
@@ -160,7 +168,7 @@ public class main {
 							}
 							
 							
-							
+			
 							System.out.println("Inicialização concluida com sucesso!");
 							abrir = true;
 
@@ -187,7 +195,7 @@ public class main {
 						System.out.println("Deseja incluir uma bebida? (S/N)");
 						esclh = ent.next().toUpperCase();
 						if(esclh.charAt(0) == 'S') {
-							c.setValor(cardBebidas()+15);
+							c.setValor(cardBebidas()+15);  //REVER +15
 						} else {
 							c.setValor(15);
 						}
@@ -219,10 +227,42 @@ public class main {
 					System.out.println("= ");
 					
 					break;
+					
 				case '4':
-					caixa cxa = new caixa();
-					cxa.cx();
+					System.out.println("=====       CAIXA        =====");
+					boolean pag = true;
+					do {
+						System.out.print("\n=Digite o numero da comanda: ");
+						String numC = ent.next();
+						double valor = rest.pesquisaValor(numC);
+						if(valor != 0) {
+							System.out.print("\n=Valor total devido: ");
+							System.out.println(arredondar(valor));
+							String mesa = rest.pesquisaMesa(numC);
+							System.out.println("\n=Deseja realizar o pagamento? (S/N)");
+							String escl = ent.next().toUpperCase();
+							if(escl.charAt(0) == 'S') {
+								m = new mesas();
+								rest.pagaComanda(numC);
+								m.setMesa(mesa);
+								rest.inserirUlt(m);
+								System.out.println("Comanda paga com sucesso!");
+								//c.setClientAtend(c.getClientAtend()+1);
+								pag = false;
+							} else {
+								System.out.println("Comanda não paga!");
+								pag = false;
+							}
+							
+						} else {
+							System.out.println("Comanda não localizada!");
+						}
+					} while(pag);
 					break;
+					
+					
+					
+					
 				case '5':
 					//relatorio
 					
@@ -235,7 +275,7 @@ public class main {
 					
 					
 				default:
-					System.out.println("Opção invalida!");
+					System.out.println("");
 			}
 		} while(opc != '6');
 		ent.close();
