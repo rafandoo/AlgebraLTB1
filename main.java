@@ -20,14 +20,6 @@ public class main {
 		return (new DecimalFormat("#,##0.00").format(n));
 	}
 	
-	//TESTES
-	private static void teste() {
-		System.out.println("SUCESSO!");
-	}
-	private static void erro() {
-		System.out.println("FALHA!!");
-	}
-	
 	//CARDAPIO DE BEBIDAS
 	public static float cardBebidas() {
 		int esc;
