@@ -226,9 +226,3 @@ public class ListaS {
 		
 	}
 }
-
-	
-	
-	
-	
-

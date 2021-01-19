@@ -22,4 +22,3 @@ public class nodoMesas {
 		this.prox = prox;
 	}
 }
-
