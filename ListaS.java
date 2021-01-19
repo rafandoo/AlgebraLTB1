@@ -17,6 +17,7 @@ public class ListaS {
 		
 		this.primM = null;
 		this.ultM = null;
+		this.quantMesas = 0;
 		
 	}
 	
@@ -118,10 +119,12 @@ public class ListaS {
 			return (atual.getC().getMesas()); //RETORNA O VALOR DA MESA
 		}
 	
-	//-------------------------
+	//MESAS
 	
+	//ATRIBUTOS
 	private nodoMesas primM;
 	private nodoMesas ultM;
+	private int quantMesas;
 	
 	//GETTERS E SETTERS
 	public void setPrimM(nodoMesas primM) {
@@ -136,6 +139,13 @@ public class ListaS {
 	}
 	public nodoMesas getUltM() {
 		return ultM;
+	}
+	
+	public void setQuantMesas(int quantMesas) {
+		this.quantMesas = quantMesas;
+	}
+	public int getQuantMesas() {
+		return quantMesas;
 	}
 
 	
@@ -153,6 +163,7 @@ public class ListaS {
 		NvNodo2.setProxM(this.primM);
 		this.primM = NvNodo2;
 		NvNodo2 = null;
+		this.quantMesas++;
 	}
 	
 	//METODO DE INSERSÂO 2
@@ -164,6 +175,7 @@ public class ListaS {
 			this.ultM.setProxM(NvNodo2);
 		}
 		this.ultM = NvNodo2;
+		this.quantMesas++;
 	}
 	
 	//METODO IMPRESSÃO
@@ -199,6 +211,7 @@ public class ListaS {
 				}
 				antM.setProxM(atualM.getProxM());
 		}
+		this.quantMesas--;
 		return true;
 		}
 	}

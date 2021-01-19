@@ -55,6 +55,7 @@ public class main {
 	public static char menu() {
 		String msg;
 		Scanner ent = new Scanner(System.in);
+		limpaTela();
 		
 		System.out.println("** Sistema gerencial Dev's Restaurant **");
 		System.out.println("**             Versão 2.0             **\n");
@@ -190,14 +191,8 @@ public class main {
 					
 				case '2':
 					if (abrir) {
-						System.out.print("\nNumero de pessoas na fila: ");
-						System.out.print(filaR.getTotalRest()+"\n");
-						System.out.print("\nNumero de pessoas almocando: ");
-						System.out.print(filaR.getTotalAlm()+"\n");
-						
 						c = new comanda();
 						m = new mesas();
-						
 						
 						if(filaR.ehVazioFR()) {
 							System.out.println("Não tem ninguem na fila para o buffet");
@@ -227,6 +222,8 @@ public class main {
 									System.out.println("Mesa indisponivel");
 								}
 							}
+							admin.setQuantAtend(admin.getQuantAtend()+1);
+							filaR.setTotalAlm(filaR.getTotalAlm()+1);
 							rest.inserirIni(c);
 							filaR.removeIniR();
 						}
@@ -241,6 +238,7 @@ public class main {
 						System.out.println("= 1- Inserir pratos na pilha =");
 						System.out.println("= 2- Inserir pessoas na fila =");
 						System.out.println("= 3- Mudar valor do buffet   =");
+						System.out.println("= 4- Pessoas que almocaram   =");
 						System.out.println("==============================");
 						System.out.print("\n=Digite a operação desejada: ");
 						
@@ -269,6 +267,22 @@ public class main {
 								System.out.print("\nDigite o novo valor do buffet: R$");
 								admin.setValorbuffet(ent.nextFloat());
 								break;
+								
+							case '4':
+								System.out.println("=====   CONTROLE REST   ====");
+								System.out.print("\nQuantidade de pessoas almocando atualmente: "+filaR.getTotalAlm());
+								System.out.print("\n\nDigite a quantidade de pessoas que acabaram de almocar: ");
+								int p = ent.nextInt();
+								if(filaR.getTotalAlm()<p) {
+									System.out.println("Quantidade Invalida!");
+								} else {
+									for(int i=0;i<p;i++) {
+										filaR.setTotalAlm(filaR.getTotalAlm()-1);
+										filaR.inserirFimC(i);
+									}
+								}
+								break;
+								
 							default:
 								System.out.println("opção invalida!");
 								break;
@@ -301,7 +315,7 @@ public class main {
 										m.setMesa(mesa);
 										rest.inserirUlt(m);
 										filaR.removeIniC();
-										admin.setQuantAtend(admin.getQuantAtend()+1);
+										admin.setMovTotal(admin.getMovTotal()+valor);
 										System.out.println("Comanda paga com sucesso!");
 										pag = false;
 									} else {
@@ -324,7 +338,26 @@ public class main {
 					
 				case '5':
 					if(abrir) {
-						
+						System.out.println("=== RELATORIOS GERENCIAIS ===");
+						System.out.print("\nDeseja emitir um relatorio do restaurante? (S/N)");
+						String escl = ent.next().toUpperCase();
+						if(escl.charAt(0) == 'S') {
+							limpaTela();
+							m = new mesas();
+							System.out.println("=== RELATORIOS GERENCIAIS ===");
+							System.out.print("\n\n= Numero de pessoas na fila do restaurante: "+filaR.getTotalRest());
+							System.out.print("\n= Numero de pessoas na fila do caixa: "+filaR.getTotalCX());
+							System.out.print("\n= Numero de pessoas almocando no atual momento: "+filaR.getTotalAlm());
+							System.out.print("\n= Numero de pessoas atendidas no restaurante: "+admin.getQuantAtend());
+							System.out.print("\n= Numero de pratos na pilha: "+pp.getQuantPrato());
+							System.out.print("\n= Numero de mesas livres: "+rest.getQuantMesas());
+							System.out.print("\n= Fluxo total de caixa: "+arredondar(admin.getMovTotal()));
+							System.out.println("\n\nTecle <enter>, para continuar");
+							String pause = ent.nextLine();
+							clearBuffer(ent);
+						} else {
+							System.out.println("Fechando sistema de relarios!");
+						}
 					} else {
 						System.out.println("Restaurante não aberto!");
 					}

@@ -73,8 +73,7 @@ public class filaRestaurante {
 		} else {
 			this.filaCX [this.ultCX] = num;
 			this.ultCX = ((this.ultCX + 1) % this.filaCX.length);
-			this.totalCX++;	
-			this.totalAlm--;
+			this.totalCX++;
 		}
 	}
 	
@@ -87,7 +86,6 @@ public class filaRestaurante {
 			int aux = filaRest[this.primRest];
 			this.primRest = ((this.primRest + 1) % this.filaRest.length);
 			this.totalRest--;
-			this.totalAlm++;
 			return aux;
 		}
 	}
