@@ -25,8 +25,5 @@ public class comanda {
 	public String getMesas() {
 		return mesas;
 	}
-	
 
-	
-	
 }
